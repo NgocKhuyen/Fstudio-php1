@@ -6,6 +6,9 @@
             case 'category': 
                 include_once 'controller/category.php';
                 break;
+            case 'product': 
+                include_once 'controller/product.php';
+                break;    
         }
     }
 

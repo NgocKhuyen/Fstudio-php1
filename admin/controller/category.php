@@ -3,7 +3,7 @@
     include_once '../model_DAO/category.php';
 
     extract($_REQUEST);
-    if(isset($mod)) {
+    if(isset($act)) {
         switch($act) {
             case 'list': 
                 $dsdm = category_list();

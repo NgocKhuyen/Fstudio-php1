@@ -10,7 +10,11 @@
                 <div>
                 <label class="form-label" for="">Danh Mục</label>
                 <select class="form-select" name="category" >
-                        <option value=""></option>
+                    <?php
+                        foreach($dsdm as $dm) { ?> 
+                            <option value="<?=$dm['MaDanhMuc']?>"><?=$dm['TenDanhMuc']?></option>
+                        <?php }
+                    ?>
                 </select>
                 
             </div>
