@@ -19,11 +19,14 @@
                     <p class="mb-0  text-center">Chưa có tài khoản? <a href="?mod=user&act=register"
                             class="text-primary fw-bold">Đăng ký</a></p>
                 </div>
-                <?php if(isset($data)):?>
-                <div class="alert alert-warning" role="alert">
-                    <?=$data;?>
-                </div>
-                <?php endif; unset($data);?>
+                <?php 
+                    if(!empty($error)) : ?>
+                        <div class="alert alert-warning mt-2" role="alert">
+                            <?= $error ?>
+                        </div>
+                    <?php endif; 
+                    unset($error)
+                ?>
             </div>
 
         </div>

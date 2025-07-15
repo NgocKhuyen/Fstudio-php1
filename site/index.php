@@ -9,6 +9,9 @@
             case 'cart':
                 include_once 'controller/cart.php';
                 break;
+            case 'user':
+                include_once 'controller/user.php';
+                break;
         }
         
     }
