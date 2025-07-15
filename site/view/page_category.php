@@ -19,16 +19,16 @@
         <div class="col-md-9">
         <div class="text-center mt-2">
             <div class="row">
-                <?php foreach($sp_dm as $sp):?>
-                <div class="col-md-4 my-3 ">
-                    <div class="shadow pb-3 rounded">
-                        <a href="?mod=product&act=detail&id=<?=$sp['MaSanPham']?>"><img class="img-fluid mb-2 rounded-top" src="<?='../content/img/'.$sp['HinhAnh']?>" alt=""></a>
-                    <p><b><?=$sp['TenSanPham']?></b></p>
-                    <span class="text-danger">Giá: <?=$sp['GiaKhuyenMai']?> đ </span> <span> <del> <?=$sp['Gia']?> đ</del></span>
-                    <p></p>
-                    <a href="?mod=cart&act=add&id=<?=$sp['MaSanPham']?>" class="btn btn-danger">Thuê ngay</a>
+                <?php foreach($sp_dm as $sp) : ?>
+                    <div class="col-md-4 my-3 ">
+                        <div class="shadow pb-3 rounded">
+                            <a href="?mod=product&act=detail&id=<?=$sp['MaSanPham']?>"><img class="img-fluid mb-2 rounded-top" src="<?='../content/img/'.$sp['HinhAnh']?>" alt=""></a>
+                        <p><b><?=$sp['TenSanPham']?></b></p>
+                        <span class="text-danger">Giá: <?=number_format($sp['GiaKhuyenMai'], 0, ',', '.')?>đ </span> <span> <del> <?=number_format($sp['Gia'], 0, ',', '.')?> đ</del></span>
+                        <p></p>
+                        <a href="?mod=cart&act=add&id=<?=$sp['MaSanPham']?>" class="btn btn-danger">Thuê ngay</a>
+                        </div>
                     </div>
-                </div>
                 <?php endforeach; ?>
             </div>
         </div>

@@ -18,6 +18,16 @@
                 include_once 'view/page_search.php';
                 include_once 'view/template_footer.php';
                 break;
+            case 'category':
+                if(!isset($min_price)) $min_price = 0;
+                if(!isset($max_price)) $max_price = 99999999;
+                if(!isset($order)) $order = 'DESC';
+                $sp_dm = product_category_order_filter($id, $min_price, $max_price, $order);
+                include_once 'view/template_header.php';
+                include_once 'view/page_category.php';
+                include_once 'view/template_footer.php';
+                break;
+
         }
         
     }

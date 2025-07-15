@@ -1,6 +1,13 @@
 
-<main>      
-           
+<main> 
+    <?php
+        if(empty($_SESSION['cart'])) { ?>
+            <h2 class="text-center pt-lg-5 mb-5">Giỏ Hàng Trống</h2>
+            <!-- <a href="?mod=page&act=home" class="btn btn-warning">
+                <i class="fa fa-angle-left"></i>
+            </a> -->
+        <?php 
+        } else { ?>
             <div class="container my-3">
                 <table id="cart" class="table table-hover table-condensed">
                     <thead>
@@ -26,7 +33,7 @@
                             </td>
                             <td data-th="Kích thước">Size L</td>
                             <td data-th="Màu sắc">Màu xanh</td>
-                            <td data-th="Giá"><?=$item['GiaKhuyenMai']?> đ</td>
+                            <td data-th="Giá"><?=number_format($item['GiaKhuyenMai'], 0, ',', '.')?>đ</td>
                             <td data-th="Số lượng">
                                 <div class="amount-product-buy d-flex justify-content-center">
                                     <a href="?mod=cart&act=decrease&id=<?=$item['MaSanPham'] ?>" class="minus-product bg-dark bg-opacity-25  px-2">
@@ -44,7 +51,7 @@
                                 </a>
                             </td>
                         </tr>
-                       
+                        
                         <?php endforeach; ?>
                     </tbody>
 
@@ -61,7 +68,7 @@
                         <div class="col-sm-6">
                             <div
                                 class="cart-payment-right  d-flex align-items-center justify-content-between hstack gap-3">
-                                <h6 class="mb-0 text-truncate">Tổng thanh toán: </h6>
+                                <h6 class="mb-0 text-truncate">Tổng thanh toán: <span class="ms-2"><?= number_format($item['GiaKhuyenMai'] * $item['SL'], 0, ',', '.') ?>đ</span></h6>
                                 <strong></strong>
                                 <a href="?mod=order&act=checkout" class="btn btn-success btn-block">Thanh toán
                                 </a>
@@ -70,5 +77,6 @@
                     </div>
                 </div>
             </div>
-            
-        </main>
+        <?php } 
+    ?>     
+</main>
