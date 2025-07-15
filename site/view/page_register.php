@@ -31,11 +31,11 @@
                   <label class="form-label mt-3 mb-1" >Ảnh đại diện</label>
                   <input name="image" type="file" class="form-control" />
             </div>
-            <?php if(isset($data)):?>
-                <div class="alert alert-warning" role="alert">
-                    <?=$data;?>
+            <?php if(!empty($error)):?>
+                <div class="alert alert-warning mt-2" role="alert">
+                    <?=$error;?>
                 </div>
-                <?php endif; unset($data);?>
+                <?php endif; unset($error);?>
             <div class="text-center fs-1">
           <input name="register_submit" type="submit" class="btn btn-danger btn-lg" value="Đăng ký">
             </div>
