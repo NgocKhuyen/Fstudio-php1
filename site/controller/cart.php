@@ -10,8 +10,11 @@
                 break;
             case 'add':
                 $sp = product_one($id);
+                if(!isset($SoLuong)) {
+                    $SoLuong = 1;
+                }
                 if(isset($_SESSION['cart'][$id])) {
-                    $_SESSION['cart'][$id]['SL'] += 1;
+                    $_SESSION['cart'][$id]['SL'] += $SoLuong;
                 } else {
                     $_SESSION['cart'][$id] = array(
                         'MaSanPham' => $sp['MaSanPham'],
@@ -19,7 +22,7 @@
                         'HinhAnh' => $sp['HinhAnh'],
                         'Gia' => $sp['Gia'],
                         'GiaKhuyenMai' => $sp['GiaKhuyenMai'],
-                        'SL' => 1
+                        'SL' => $SoLuong
                     );
                 }
                 include_once 'view/template_header.php';

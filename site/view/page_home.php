@@ -24,7 +24,7 @@
                     foreach($sp_hot as $sp) { ?>
                         <div class="col-md-3 ">
                             <div class="shadow pb-3 rounded">
-                                <a href="?mod=product&act=detail&id="><img class="img-fluid mb-2 rounded-top" src="../content/img/<?=$sp['HinhAnh']?>" alt=""></a>
+                                <a href="?mod=product&act=detail&id=<?=$sp['MaSanPham']?>"><img class="img-fluid mb-2 rounded-top" src="../content/img/<?=$sp['HinhAnh']?>" alt=""></a>
                                 <p><b><?=$sp['TenSanPham']?></b></p>
                                 <span class="text-danger"><?=number_format($sp['GiaKhuyenMai'], 0, ',')?>đ </span> <span> <del> <?=number_format($sp['Gia'], 0, ',')?> đ</del></span>
                                 <p></p>
@@ -41,7 +41,7 @@
                 <div class="text-center mt-5">
                     <div class=" d-flex">
                         <h4 class="my-3"><?=$dm['TenDanhMuc']?></h4>
-                        <a href="?mod=page&act=category&id=" class="btn btn-outline-dark my-3 ms-auto">Xem thêm</a>
+                        <a href="?mod=page&act=category&id=<?=$dm['MaDanhMuc']?>" class="btn btn-outline-dark my-3 ms-auto">Xem thêm</a>
                     </div>
                     <div class="row">
                         <?php $dem = 0; ?>
@@ -50,7 +50,7 @@
                                 <?php if ($sp['MaDanhMuc'] == $dm['MaDanhMuc']) { ?>
                                     <div class="col-md-3 ">
                                         <div class="shadow pb-3 rounded">
-                                            <a href="?mod=product&act=detail&id=">
+                                            <a href="?mod=product&act=detail&id=<?=$sp['MaSanPham']?>">
                                                 <img class="img-fluid mb-2 rounded-top" src="../content/img/<?=$sp['HinhAnh']?>" alt="">
                                             </a>
                                             <p><b><?=$sp['TenSanPham']?></b></p>

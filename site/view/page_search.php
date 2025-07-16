@@ -8,11 +8,13 @@
                 foreach($data_search as $sp) : ?>
                     <div class="col-md-3 mb-3">
                         <div class="shadow pb-3 rounded">
-                            <img class="img-fluid mb-2 rounded-top" src="./content/img/<?=$sp['HinhAnh']?>" alt="">
+                            <a href="?mod=product&act=detail&id=<?=$sp['MaSanPham']?>">
+                                <img class="img-fluid mb-2 rounded-top" src="../content/img/<?=$sp['HinhAnh']?>" alt="">
+                            </a>
                             <p><b><?=$sp['TenSanPham']?></b></p>
                              <span class="text-danger"><?=number_format($sp['GiaKhuyenMai'], 0, ',')?>đ</span> <span> <del> <?=number_format($sp['Gia'], 0, ',')?>đ</del></span>
                             <p></p>
-                            <a href="?mod=cart&act=add&id=" class="btn btn-danger">Mua ngay</a>
+                            <a href="?mod=cart&act=add&id=<?=$sp['MaSanPham']?>" class="btn btn-danger">Mua ngay</a>
                         </div>
                     </div>
                 <?php endforeach; ?>

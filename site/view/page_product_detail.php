@@ -8,9 +8,9 @@
         </div>
         <div class="col-md-6">
             <h1><?=$product_detail['TenSanPham'] ?></h1>
-            <p>Hàng chính hãng</p>
-            <p>Giá khuyến mãi: <?=$product_detail['GiaKhuyenMai'] ?> đ</p>
-            <p>Giá gốc: <?=$product_detail['Gia'] ?> đ </p>
+            <p><?=$product_detail['MoTa'] ?></p>
+            <p>Giá khuyến mãi: <?=number_format($product_detail['GiaKhuyenMai'], 0, ',', '.')?> đ</p>
+            <p>Giá gốc: <?=number_format($product_detail['Gia'], 0, ',', '.') ?> đ </p>
             <p>Size: </p>
             <div class="d-flex flex-row mb-3">
                 <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
@@ -42,8 +42,8 @@
                   </div>
             </div>
             <form method="post" action="?mod=cart&act=add&id=<?=$id?>">
-            <p>Số lượng: <input type="number" value=1 width="10px" name="SoLuong">  </p>
-            <input type=submit class="btn btn-danger" name="product_add" value="Thuê ngay">
+                <p>Số lượng: <input type="number" value=1 width="10px" name="SoLuong">  </p>
+                <input type=submit class="btn btn-danger" name="product_add" value="Thuê ngay">
             </form>
         </div>
        

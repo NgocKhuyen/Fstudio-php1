@@ -57,4 +57,5 @@
                 WHERE MaSanPham = ?";
         return pdo_execute($sql, $name, $image, $price, $sale, $category, $quantity, $description, $hot, $status, $id);
     }
+
 ?>
